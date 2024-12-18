@@ -6,6 +6,9 @@ class PaperTrader:
         self.trading_client = trading_client
 
     def place_market_order(self, symbol, qty, side):
+        if not symbol or qty <= 0 or side.lower() not in ["buy", "sell"]:
+            raise ValueError("Invalid parameters for market order.")
+        
         side_enum = OrderSide.BUY if side.lower() == "buy" else OrderSide.SELL
         order_data = MarketOrderRequest(
             symbol=symbol,
@@ -14,5 +17,10 @@ class PaperTrader:
             time_in_force=TimeInForce.DAY,
             type=OrderType.MARKET
         )
-        order = self.trading_client.submit_order(order_data)
+
+        try:
+            order = self.trading_client.submit_order(order_data)
+        except Exception as e:
+            raise RuntimeError(f"Error placing market order: {e}")
+
         return order
