@@ -1,19 +1,41 @@
 # Quant-Test-Environment
 Testing Environment to test Quant strategies (Math, ML, and Sentiment Analysis models)
 
-Testing...
+This project provides a modular framework to:
+- Fetch and preprocess historical data from Alpaca.
+- Apply various trading strategies (mathematical, ML-based, sentiment-based).
+- Backtest strategies on historical data.
+- Visualize results and performance metrics.
+- Paper trade promising strategies on Alpaca.
+
+## Setup
+
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
 
 project/
 ├── data/
-│   ├── raw/                # Raw, unprocessed data (2000–2023 and 2024–present)
-│   ├── processed/          # Preprocessed data, ready for modeling
+│   ├── raw/
+│   └── processed/
 ├── models/
-│   ├── math_models/        # Mathematical models (e.g., moving averages, mean reversion)
-│   ├── ml_models/          # Machine learning models (e.g., regression, classifiers)
-│   ├── sentiment_models/   # Sentiment analysis models (e.g., NLP-based)
+│   ├── math_models/
+│   │   └── moving_average.py
+│   ├── ml_models/
+│   │   └── example_ml_model.py
+│   ├── sentiment_models/
+│       └── sentiment_example.py
 ├── utils/
-│   ├── data_loader.py      # Unified data loader for raw and processed data
-│   ├── feature_engineer.py # Scripts for generating technical indicators, derived features
-│   ├── backtester.py       # Unified backtesting framework
-│   ├── visualizer.py       # Visualization tools for interactive graphs
-├── main.py                 # Central script to coordinate testing and results
+│   ├── data_loader.py
+│   ├── feature_engineer.py
+│   ├── backtester.py
+│   ├── metrics.py
+│   ├── paper_trader.py
+│   ├── visualizer.py
+│   └── trader_setup.py
+├── logs/
+│   └── run.log
+├── main.py
+├── .env
+├── requirements.txt
+└── README.md

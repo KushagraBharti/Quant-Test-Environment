@@ -1,0 +1,8 @@
+alpaca-py
+pandas
+numpy
+matplotlib
+python-dotenv
+plotly
+scikit-learn
+requests
