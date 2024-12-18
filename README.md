@@ -14,6 +14,16 @@ This project provides a modular framework to:
    ```bash
    pip install -r requirements.txt
 
+2. Setup .env file:
+   ```env
+   TRADE_API_KEY="your_alpaca_key"
+   TRADE_API_SECRET="your_alpaca_secret_key"
+   TRADE_API_URL="alpaca_provided_url"
+
+3. Should be able to run everything as is.
+
+## Project Structure
+
 ```
 project/
 ├── data/
