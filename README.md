@@ -14,6 +14,7 @@ This project provides a modular framework to:
    ```bash
    pip install -r requirements.txt
 
+```
 project/
 ├── data/
 │   ├── raw/
@@ -39,3 +40,4 @@ project/
 ├── .env
 ├── requirements.txt
 └── README.md
+```
